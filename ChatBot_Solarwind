@@ -121,7 +121,7 @@ function create_response($text, $message)
 		case '/nodes_down':
 		case '/nodes_down'.$usernamebot :
 			$data = array('query' => "SELECT Caption, IPAddress, Status FROM Orion.Nodes WHERE Status=2");
-			$url = "https://satelit.kalbe.co.id:17778/SolarWinds/InformationService/v3/Json/Query";
+			$url = "https://localhost:17778/SolarWinds/InformationService/v3/Json/Query";
 			$jdata = json_encode($data);
 			/*echo $result = CallAPI($url, $jdata);*/
 			$hasil = CallAPI($url, $jdata);
