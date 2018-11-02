@@ -118,9 +118,9 @@ function create_response($text, $message)
             break;
 		
 		//permintaan status node solarwind	
-		case '/satelit':
-		case '/satelit'.$usernamebot :
-			$data = array('query' => "SELECT Caption, IPAddress, Status FROM Orion.Nodes WHERE Vendor = 'Cisco'");
+		case '/nodes_down':
+		case '/nodes_down'.$usernamebot :
+			$data = array('query' => "SELECT Caption, IPAddress, Status FROM Orion.Nodes WHERE Status=2");
 			$url = "https://satelit.kalbe.co.id:17778/SolarWinds/InformationService/v3/Json/Query";
 			$jdata = json_encode($data);
 			/*echo $result = CallAPI($url, $jdata);*/
